@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         readItems();
         itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
-        lvItems = (ListView)findViewById(R.id.lvItems);
+        lvItems = findViewById(R.id.lvItems);
         lvItems.setAdapter(itemsAdapter);
 
         //mock data
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAddItem(View v){
-        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
+        EditText etNewItem = findViewById(R.id.etNewItem);
         String itemText = etNewItem.getText().toString();
         itemsAdapter.add(itemText);
         etNewItem.setText("");
